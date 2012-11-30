@@ -7,3 +7,4 @@ c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\obj\Debug\AccreteSharp.Syst
 c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\obj\Debug\AccreteSharp.csproj.GenerateResource.Cache
 c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\obj\Debug\AccreteSharp.exe
 c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\obj\Debug\AccreteSharp.pdb
+c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\obj\Debug\AccreteSharp.csprojResolveAssemblyReference.cache
