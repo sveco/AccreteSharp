@@ -147,7 +147,7 @@ namespace AccreteSharp
                 {
                     reduced_mass = System.Math.Pow(temp, (1.0 / 4.0));
                 }
-                catch (System.ArithmeticException ae)
+                catch (System.ArithmeticException)
                 {
                     reduced_mass = 0.0;
                 }

@@ -53,7 +53,7 @@ namespace AccreteSharp.Ssx
             if (starSystems != null)
             {
                 MemoryStream memXmlStream = new MemoryStream();
-                XmlSerializer serializer = new XmlSerializer(typeof(StarSystem), null, new Type[] { typeof(Body), }, null, null, null, null);
+                XmlSerializer serializer = new XmlSerializer(typeof(StarSystem), null, new Type[] { typeof(Body), }, null, null, null);
 
                 StarSystem ssx = new AccreteSharp.Ssx.StarSystem();
                 ssx.Name = "Generated";
@@ -61,9 +61,9 @@ namespace AccreteSharp.Ssx
                     new Body
                     {
                         Name = "Primary",
-                        Mass = starSystems[0].primary.SM * PhysicalConstants.SOLAR_MASS_IN_GRAMS / 1000,
+                        Mass = starSystems[0].Primary.SM * PhysicalConstants.SOLAR_MASS_IN_GRAMS / 1000,
                         Period = 10832,
-                        Radius = starSystems[0].primary.radius * PhysicalConstants.SUN_RADIUS,
+                        Radius = starSystems[0].Primary.radius * PhysicalConstants.SUN_RADIUS,
                         XPosition = 0,
                         YPosition = 0,
                         ZPosition = 0,
@@ -97,16 +97,6 @@ namespace AccreteSharp.Ssx
 
                 memXmlStream.Seek(0, SeekOrigin.Begin);
                 xmlDoc.Load(memXmlStream);
-
-                XmlProcessingInstruction newPI;
-                //String PItext = string.Format("type='text/xsl' href='{0}'", "system.xslt");
-                //newPI = xmlDoc.CreateProcessingInstruction("xml-stylesheet", PItext);
-
-                //xmlDoc.InsertAfter(newPI, xmlDoc.FirstChild);
-
-                // Now write the document
-
-                // out to the final output stream
 
                 XmlTextWriter wr = new XmlTextWriter("system.ssx", System.Text.Encoding.ASCII);
                 wr.Formatting = Formatting.Indented;

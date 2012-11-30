@@ -1,0 +1,9 @@
+c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\bin\Debug\AccreteSharp.exe.config
+c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\bin\Debug\system.css
+c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\bin\Debug\system.xslt
+c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\bin\Debug\AccreteSharp.exe
+c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\bin\Debug\AccreteSharp.pdb
+c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\obj\Debug\AccreteSharp.SystemDisplay2D.resources
+c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\obj\Debug\AccreteSharp.csproj.GenerateResource.Cache
+c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\obj\Debug\AccreteSharp.exe
+c:\Users\janko.svetlik\Documents\GitHub\AccreteSharp\obj\Debug\AccreteSharp.pdb

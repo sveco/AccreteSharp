@@ -20,7 +20,7 @@ namespace AccreteSharp
         Descending = 1,
     }
 
-    public class PlanetSort : IComparer
+    public sealed class PlanetSort : IComparer
     {
         private SortDirection m_direction = SortDirection.Ascending;
 
@@ -112,6 +112,7 @@ namespace AccreteSharp
         [XmlElement("StarSystems")]
         public static IList<StarSystem> starSystems = new List<StarSystem>();
 
+        [STAThread]
         static void Main(string[] args)
         {
             int stars = 1;

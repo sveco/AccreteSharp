@@ -50,10 +50,7 @@ namespace AccreteSharp
     public class StarSystem : AccreteObject
     {
         public double x, y, z;
-        public Star primary;
-        //public Planet planets;
-        //[XmlIgnore]
-        //private Planet moons;
+        public Star Primary { get; set; }
 
         [XmlElement("Planet")]
         public ArrayList planetsList = new ArrayList();
@@ -62,7 +59,7 @@ namespace AccreteSharp
         /// <summary> Public constructor builds a star system with a random star.</summary>
         public StarSystem()
         {
-            primary = new Star((int)(nextDouble() * 60)); // more variety
+            Primary = new Star((int)(nextDouble() * 60)); // more variety
             //primary = new Star(random_number(0.6, 1.3)); // starform method
             Initialize();
             //initializeBode();
@@ -77,7 +74,7 @@ namespace AccreteSharp
             ArrayList protoplanetsList = new ArrayList();
             //int I;
 
-            Protosystem ps = new Protosystem(primary);
+            Protosystem ps = new Protosystem(Primary);
             ps.dist_planetary_masses();
             //p = ps.planet_head;
             foreach (Protoplanet p in ps.protoplanetsList)
@@ -85,9 +82,9 @@ namespace AccreteSharp
                 if (p.mass > 0.0)
                 {
                     cur_planet = new Planet(p);
-                    cur_planet.age = primary.age; // not sure why, but planets are missing age when generated, so i'll put this here
-                    cur_planet.orbit_zone = primary.orb_zone(cur_planet.a);
-                    cur_planet.set_vital_stats(primary.SM, primary.r_greenhouse, primary.r_ecosphere, primary.age);
+                    cur_planet.age = Primary.age; // not sure why, but planets are missing age when generated, so i'll put this here
+                    cur_planet.orbit_zone = Primary.orb_zone(cur_planet.a);
+                    cur_planet.set_vital_stats(Primary.SM, Primary.r_greenhouse, Primary.r_ecosphere, Primary.age);
                     cur_planet.description = pc.planetType(cur_planet);
 
                     // could generate moons here
@@ -98,7 +95,7 @@ namespace AccreteSharp
 
                     //not sure if it's ok to calculate this way, satellites can be created individually as planets and then get snatched by bigger planet but it works this way too
                     //planet migration due to orbital drag not calculated too
-                    Protosystem ps_moons = new Protosystem(primary, cur_planet);
+                    Protosystem ps_moons = new Protosystem(Primary, cur_planet);
                     ps_moons.dist_moon_masses();
                     Planet last_moon = null, cur_moon = null;
 

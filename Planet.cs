@@ -84,9 +84,12 @@ namespace AccreteSharp
         //public Planet next_planet;
         //public Planet first_moon;
 
+        [XmlElement(ElementName = "MoonsCount")]
+        public int MoonsCount { get { return this.moons.Count; } }
+
         [XmlIgnore]
         public ArrayList moons;
-        public ArrayList planets;
+//        public ArrayList planets;
 
         // these data elements are star related, but are stored here for my use
         public double r_ecosphere;
@@ -95,8 +98,11 @@ namespace AccreteSharp
         public double age;
         // albedo factors
         public double cloud_factor, water_factor, rock_factor, airless_rock_factor, ice_factor, airless_ice_factor;
+        [XmlIgnore]
         public int its; //iterations
+        [XmlIgnore]
         public bool temp_unstable;
+        [XmlIgnore]
         public string description;
         //public bool planetary_ring; //indicates wether the moon has been
         //
@@ -1023,7 +1029,7 @@ namespace AccreteSharp
             double water_fraction = hydrosphere;
             double cloud_fraction = cloud_cover;
             double ice_fraction = ice_cover;
-            double rock_fraction, cloud_adjustment, components, cloud_part, rock_part, water_part, ice_part;
+            double rock_fraction, /*cloud_adjustment, components,*/ cloud_part, rock_part, water_part, ice_part;
             double rock_adjustment, water_adjustment, ice_adjustment;
             double result;
 
@@ -1230,8 +1236,6 @@ namespace AccreteSharp
         {
             return (50.0 / 40.0 * System.Math.Pow(mass / PhysicalConstants.SUN_MASS_IN_EARTH_MASSES, (1.0 / 3.0)));
         }
-
-        public int Moons { get { return this.moons.Count; } }
 
         #region cartesian coordinates
         //maybe those can be moved to separate object and inherit here

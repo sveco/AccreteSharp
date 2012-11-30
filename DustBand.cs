@@ -156,7 +156,6 @@ namespace AccreteSharp
                 double width;
                 double temp;
                 double volume;
-                double retval;
 
                 if (bandwidth <= 0.0)
                     bandwidth = 0.0;

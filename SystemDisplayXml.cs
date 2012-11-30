@@ -26,7 +26,7 @@ namespace AccreteSharp
         public void SerializeXml(IList<StarSystem> starSystems)
         {
             MemoryStream memXmlStream = new MemoryStream();
-            XmlSerializer serializer = new XmlSerializer(starSystems.GetType(), null, new Type[] { typeof(Planet), typeof(StarSystem) }, new XmlRootAttribute("Stars"), null, null, null);
+            XmlSerializer serializer = new XmlSerializer(starSystems.GetType(), null, new Type[] { typeof(Planet), typeof(StarSystem) }, new XmlRootAttribute("Stars"), null, null);
 
             serializer.Serialize(memXmlStream, starSystems);
 
