@@ -95,7 +95,11 @@ namespace AccreteSharp
                 }
                 if (((System.Math.Abs(temp) <= System.Math.Abs(dist1)) || (System.Math.Abs(temp) <= System.Math.Abs(dist2))))
                 {
-                    //System.out.println("Collision between two planetesimals!");
+                    //collision
+                    if (p.mass > 0.2 /*&& (node1.mass / p.mass) > 0.1*/)
+                    {
+
+                    }
 
                     a3 = (node1.mass + p.mass) / ((node1.mass / node1.a) + (p.mass / p.a));
                     temp = node1.mass * System.Math.Sqrt(node1.a) * System.Math.Sqrt(1.0 - (node1.e * node1.e));
@@ -112,15 +116,6 @@ namespace AccreteSharp
                     disc.accrete_dust(node1);
                     //node1 = null;
                     finished = true;
-                }
-                else if ((System.Math.Abs(temp - dist1) < 0.01) || (System.Math.Abs(temp - dist2) < 0.01))
-                {
-                    //simulation of moon capture. not very successful.
-                    if (p.moons == null)
-                    {
-                        p.moons = new ArrayList();
-                    }
-                    p.moons.Add(node1);
                 }
             }
             if (!finished)
